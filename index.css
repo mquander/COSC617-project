@@ -1,0 +1,73 @@
+html {
+  background-color: #800000; /*33475b*/
+  color: white;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  text-align: center;
+}
+.navbar a {
+  /* float: left; */
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 8px 10px;
+  text-decoration: none;
+}
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+#welcome {
+  width: 800px;
+  margin: auto;
+  margin-top: 80px;
+  text-align: center;
+}
+
+#fullscreen-image {
+  background-image: url("spaghetti_img.jpg"); /* https://www.delish.com/cooking/recipe-ideas/a22022691/best-homemade-spaghetti-sauce-recipe/ */
+  /*background-repeat: no-repeat;*/
+  height: 500px;
+  text-align: center;
+}
+li {
+  display: inline-block;
+}
+
+.split {
+  position: fixed;
+  z-index: 1;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.takeout {
+  border: 1px solid black;
+  width: 100%;
+  height: 300px;
+  overflow: auto;
+  text-align: center;
+}
+
+.split-right {
+  float: right;
+  width: 50%;
+  height: 400px;
+}
+.split-left {
+  float: right;
+  width: 50%;
+  height: 400px;
+}
+#dine-in {
+  text-align: center;
+  border: 1px solid black;
+  width: 100%;
+  overflow: auto;
+}
