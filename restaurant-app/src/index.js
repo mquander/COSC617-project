@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Home } from "./components"
+import { Home, CustomAppBar } from "./components"
 
 ReactDOM.render(
 <Router>
