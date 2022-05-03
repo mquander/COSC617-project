@@ -11,7 +11,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import { Link } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const pages = ['Menu', 'About', 'Contact Us'];
 const settings = ['Profile', 'Logout'];
@@ -45,7 +45,7 @@ const CustomAppBar = () => {
             color="inherit"
             component={Link}
             to="/"
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+            sx={{ mr: 2, display: { xs: 'none', md: 'flex' }, textDecoration: "none" }}
           >
             The Restaurant
           </Typography>
