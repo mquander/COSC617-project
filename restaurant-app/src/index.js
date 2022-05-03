@@ -8,7 +8,7 @@ import { Home } from "./components/Paths"
 ReactDOM.render(
 <Router>
   <Routes>
-    <Route path="/" element={<Home />} />
+    <Route exact path="/" element={<Home />} />
   </Routes>
   </Router>,
   
