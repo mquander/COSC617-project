@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Home } from "./components/Paths"
+import { Home, Login, Signup } from "./components/Paths"
+
 
 ReactDOM.render(
 <Router>
   <Routes>
     <Route exact path="/" element={<Home />} />
+    <Route path="/login" element={<Login />} />
+    <Route path="/signup" element={<Signup />} />
   </Routes>
   </Router>,
   
