@@ -49,7 +49,6 @@ const CustomAppBar = () => {
           >
             The Restaurant
           </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -80,8 +79,8 @@ const CustomAppBar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page} onClick={handleCloseNavMenu} component={Link} to="/Login" sx={{textDecoration: "none"}}>
+                  <Typography textAlign="center"  component={Link} to="/login" sx={{textDecoration: "none"}}>{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -129,7 +128,7 @@ const CustomAppBar = () => {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                <MenuItem key={setting} component={Link} to="/login" onClick={handleCloseUserMenu}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
