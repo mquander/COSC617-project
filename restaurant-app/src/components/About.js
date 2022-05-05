@@ -28,7 +28,7 @@ function About() {
         src="https://media.architecturaldigest.com/photos/5e20aa88e37a670009c031f0/16:9/w_120,c_limit/19101_press_fotografiska_12-7-19_199.jpg 120w, https://media.architecturaldigest.com/photos/5e20aa88e37a670009c031f0/16:9/w_240,c_limit/19101_press_fotografiska_12-7-19_199.jpg 240w, https://media.architecturaldigest.com/photos/5e20aa88e37a670009c031f0/16:9/w_320,c_limit/19101_press_fotografiska_12-7-19_199.jpg 320w, https://media.architecturaldigest.com/photos/5e20aa88e37a670009c031f0/16:9/w_640,c_limit/19101_press_fotografiska_12-7-19_199.jpg 640w, https://media.architecturaldigest.com/photos/5e20aa88e37a670009c031f0/16:9/w_960,c_limit/19101_press_fotografiska_12-7-19_199.jpg"
         />
         <Typography variant="h5" align="center" color="text.secondary" component="p">
-          Started from the bottom, now we here
+          COSC 617 is really cool and this is our restaurant app. Enjoy!
         </Typography>
       </Container>
     </>
