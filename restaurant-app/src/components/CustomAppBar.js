@@ -19,12 +19,12 @@ const pages = [
     path: "/menu"
   },
   {
-    title: 'About',
-    path: '/about'
+    title: "About",
+    path: "/about"
   }, 
    {
-     title: 'Contact Us',
-     about: '/contact'
+     title: "Contact Us",
+     path: "/contact"
    }
   ];
 
@@ -99,22 +99,24 @@ const CustomAppBar = () => {
               ))}
             </Menu>
           </Box>
-          {/*<Typography
+          <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
               >
-            LOGO
-              </Typography>*/}
+            The Restaurant
+              </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.title}
+                component={Link}
+                to={page.path}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+                {page.title}
               </Button>
             ))}
           </Box>
