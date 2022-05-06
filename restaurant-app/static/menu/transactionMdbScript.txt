@@ -1,0 +1,10 @@
+// insert script
+> db.transaction.insert({ "transaction_ID" : "123", 
+	"order_num" : "234", 
+	"start_time" : "2000", 
+	"end_time" : "2000", 
+	"error" : 0
+});
+
+// update script
+> db.transaction.update({"transaction_ID" : "123"}, {$set: {"start_time": "2100"} });

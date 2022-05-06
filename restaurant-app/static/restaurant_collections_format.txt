@@ -1,0 +1,41 @@
+// customers collection
+{
+	"cust_ID": ,
+	"fname" : ,
+	"lname": ,
+	"address": {
+		"st_num": ,
+		"st_name": ,
+		"apt_num": ,
+		"city": ,
+		"state": ,
+		"zip": 
+	},
+	"email": ,
+	"hash_pw": ,
+	"mobile": ,
+	"order_hist_count": ,
+	"prev_orders": []
+}
+
+// order collection
+{
+	"order_num": ,
+	"cust_ID": ,
+	"menu_items": [],
+	"order_start_date": ,
+	"order_start_time": ,
+	"discount": ,
+	"order_total": ,
+	"status": ,
+	"special_comments":
+}
+
+// transaction collection
+{
+	"transaction_ID": ,
+	"order_num": ,
+	"start_time": ,
+	"end_time": ,
+	"error": 
+}
