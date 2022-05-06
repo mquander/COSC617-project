@@ -3,13 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Home, Menu } from "./components"
+import { Home, Login, Signup, About, Contact, Menu } from "./components/Paths"
 
 ReactDOM.render(
 <Router>
   <Routes>
-    <Route path="/" element={<Home />} />
-     <Route path="/menu" element={<Menu />} />{/* */}
+    <Route exact path="/" element={<Home />} />
+    <Route path="/login" element={<Login />} />
+    <Route path="/signup" element={<Signup />} />
+    <Route path="/about" element={<About />} />
+    <Route path="/contact" element={<Contact />} />
+    <Route path="/menu" element={<Menu />} />
   </Routes>
   </Router>,
   

@@ -13,7 +13,21 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from "react-router-dom";
 
-const pages = ['Menu', 'About', 'Contact Us'];
+const pages = [
+  {
+    title: "Menu",
+    path: "/menu"
+  },
+  {
+    title: "About",
+    path: "/about"
+  }, 
+   {
+     title: "Contact Us",
+     path: "/contact"
+   }
+  ];
+
 const settings = ['Profile', 'Logout'];
 
 const CustomAppBar = () => {
@@ -79,8 +93,8 @@ const CustomAppBar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu} component={Link} to="/Login" sx={{textDecoration: "none"}}>
-                  <Typography textAlign="center"  component={Link} to="/login" sx={{textDecoration: "none"}}>{page}</Typography>
+                <MenuItem key={page.title} component={Link} to={page.path} sx={{textDecoration: "none"}} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">{page.title}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -90,17 +104,19 @@ const CustomAppBar = () => {
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-          >
-            LOGO
-          </Typography>
+              >
+            The Restaurant
+              </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.title}
+                component={Link}
+                to={page.path}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+                {page.title}
               </Button>
             ))}
           </Box>
