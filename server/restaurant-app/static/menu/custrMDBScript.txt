@@ -1,0 +1,14 @@
+// insert script
+> db.customers.insert({
+	"cust_ID": "234", "fname" : "Matt", "lname" : "Q", 
+	"address" : { "st_num" : "125", "st_name" : "Main St", "apt_num" : "", 
+			"city" : "Washington", "state" : "DC", "zip" : "20020"}, 
+	"email" : "mqtest@gmail.com", 
+	"hash_pw": "",
+	"mobile" : "2025554585", 
+	"order_hist_count" : 3, 
+	"prev_tranIDs" : [] 
+});
+
+// update script
+> db.customers.updateOne( {"fname": "Matt"}, {$set: {"prev_orders": ["102", "111", "122"]}} );

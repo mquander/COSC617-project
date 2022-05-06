@@ -1,0 +1,19 @@
+#shoppingCartx {
+    position: absolute;
+    bottom:100;
+    right:100;
+    justify-content: right;
+  }
+.shoppingCart {
+    position: fixed;
+    bottom:0;
+    right:0;
+    text-align: right;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    height: 350px;
+    max-height: 350px;
+    width: 275px;
+    max-width: 275px;
+    border-style: solid;
+  }
