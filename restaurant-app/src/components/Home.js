@@ -10,6 +10,7 @@ const options = [
     ],
     buttonText: 'Order Now',
     buttonVariant: 'outlined',
+    path: '/menu',
   },
   {
     title: 'About Us',
@@ -18,6 +19,7 @@ const options = [
     ],
     buttonText: 'About',
     buttonVariant: 'outlined',
+    path: '/about',
   },
   {
     title: 'Contact Us',
@@ -26,6 +28,7 @@ const options = [
     ],
     buttonText: 'Contact us',
     buttonVariant: 'outlined',
+    path: '/contact',
   },
 ];
 
@@ -92,7 +95,7 @@ function Home() {
                   </p>
                 </CardContent>
                 <CardActions>
-                  <Button fullWidth variant={option.buttonVariant}>
+                  <Button fullWidth variant={option.buttonVariant} href={option.path}>
                     {option.buttonText}
                   </Button>
                 </CardActions>
