@@ -4,3 +4,4 @@ export { default as Signup } from "./SignUp";
 export { default as About } from "./About";
 export { default as Contact } from "./Contact";
 export { default as Menu } from "./Menu";
+export { default as Checkout } from "./Checkout";

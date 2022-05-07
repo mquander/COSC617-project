@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import axios from 'axios';
 import './Menu.css';
+import CustomAppBar from "./CustomAppBar";
+import { Button } from "@mui/material";
 // declare array variables to hold the menu data, and variable to calculate total order price
 var menu = [], appetizers = [], entrees = [], sides = [], deserts = [], beverages = [], order = [], totalPrice = 0;
 
@@ -56,7 +58,7 @@ class Appetizers extends React.Component{
   }
   render(){
     return(<div>{appetizers.map(a => 
-        <p key={a.id}>{a.name}.......................${a.price} <button onClick={() => {addItemToOrder(a);  }}>Add</button> </p>
+        <p key={a.id}>{a.name}.......................${a.price} <Button onClick={() => {addItemToOrder(a);  }}>Add</Button> </p>
       )}</div>);
   }
 }
@@ -67,7 +69,7 @@ class Entrees extends React.Component{
   }
   render(){
     return(<div>{entrees.map(b => 
-        <p key={b.id}>{b.name}.......................${b.price} <button onClick={() => {addItemToOrder(b);  }}>Add</button> </p>
+        <p key={b.id}>{b.name}.......................${b.price} <Button onClick={() => {addItemToOrder(b);  }}>Add</Button> </p>
       )}</div>);
   }
 }
@@ -78,7 +80,7 @@ class Sides extends React.Component{
   }
   render(){
     return(<div>{sides.map(c => 
-        <p key={c.id}>{c.name}.......................${c.price} <button onClick={() => {addItemToOrder(c);  }}>Add</button> </p>
+        <p key={c.id}>{c.name}.......................${c.price} <Button onClick={() => {addItemToOrder(c);  }}>Add</Button> </p>
       )}</div>);
   }
 }
@@ -89,7 +91,7 @@ class Deserts extends React.Component{
   }
   render(){
     return(<div>{deserts.map(d => 
-        <p key={d.id}>{d.name}.......................${d.price} <button onClick={() => {addItemToOrder(d);  }}>Add</button> </p>
+        <p key={d.id}>{d.name}.......................${d.price} <Button onClick={() => {addItemToOrder(d);  }}>Add</Button> </p>
       )}</div>);
   }
 }
@@ -100,7 +102,7 @@ class Beverages extends React.Component{
   }
   render(){
     return(<div>{beverages.map(e => 
-        <p key={e.id}>{e.name}.......................${e.price} <button onClick={() => {addItemToOrder(e);  }}>Add</button> </p>
+        <p key={e.id}>{e.name}.......................${e.price} <Button onClick={() => {addItemToOrder(e);  }}>Add</Button> </p>
       )}</div>);
   }
 }
@@ -109,7 +111,7 @@ function ShoppingCart(props){
   return(
     <div>
        {props.items.map(item => 
-            <p key={item.id}><button style={{float: "left"}} onClick={() => {removeItem(item); }}>Remove</button>{item.name} {item.price}</p>) }
+            <p key={item.id}><Button style={{float: "left"}} onClick={() => {removeItem(item); }} variant="contained">Remove</Button>{item.name} {item.price}</p>) }
     </div>
   );
 }
@@ -120,6 +122,8 @@ function Menu() {
 
   filterMenu();
   return (
+    <>
+    <CustomAppBar />
     <div className="menu">
         <div className="container">
                 <h1>Menu</h1>
@@ -134,13 +138,15 @@ function Menu() {
         <div className="shoppingCart">
             <p ><b>Shopping Cart</b></p>
             <div>
-              <button onClick={() => {order.length === 0? setCount(order.length) : setCount(count + order.length);  }}>Update Cart</button>
+              <Button onClick={() => {order.length === 0? setCount(order.length) : setCount(count + order.length);  }} variant="contained">Update Cart</Button>
               <p><b>{order.length} Items</b></p>
               <div>{<ShoppingCart items={order} />}</div>
               <p style={{color:'red'}}>Total: ${totalPrice.toFixed(2)}</p>
             </div>
+            <Button href="/checkout" variant="contained">Checkout</Button>
         </div>
     </div>
+    </>
   );
 }
 
