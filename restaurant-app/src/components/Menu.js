@@ -10,7 +10,7 @@ var menu = [], appetizers = [], entrees = [], sides = [], deserts = [], beverage
   axios.get('http://localhost:5000').then(function(res) {
     menu = res.data;
   });
-
+  
 
 
 // function to filter the menu item types
@@ -143,7 +143,7 @@ function Menu() {
               <div>{<ShoppingCart items={order} />}</div>
               <p style={{color:'red'}}>Total: ${totalPrice.toFixed(2)}</p>
             </div>
-            <Button href="/checkout" variant="contained">Checkout</Button>
+            <Button href="/checkout" variant="contained" onClick={() => axios.post('http://localhost:5000', {order}).then(res => {console.log(res.data);})}>Checkout</Button>
         </div>
     </div>
     </>
