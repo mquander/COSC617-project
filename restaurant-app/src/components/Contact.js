@@ -17,7 +17,7 @@ function Contact() {
           Contact Us
         </Typography>
         <Typography variant="h5" align="center" color="text.secondary" component="p">
-          Contact information for The Restauraunt can be found below
+          Contact information for The Restaurant can be found below
         </Typography>
       </Container>
       <Container>
