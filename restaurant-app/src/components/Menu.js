@@ -6,8 +6,9 @@ import { Button } from "@mui/material";
 // declare array variables to hold the menu data, and variable to calculate total order price
 var menu = [], appetizers = [], entrees = [], sides = [], deserts = [], beverages = [], order = [], totalPrice = 0;
 
+
 // GET request to the server port
-  axios.get('http://localhost:5000').then(function(res) {
+  axios.get('/').then(function(res) {
     menu = res.data;
   });
   
