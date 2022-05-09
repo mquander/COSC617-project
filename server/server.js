@@ -63,6 +63,46 @@ app.get("/checkout", async function(req, res){
     
 });
 
+// server code for user creation/sign-up
+app.post("/signup", async function(req, res){
+    
+    const userObjInfo = {
+        "cust_ID" : (Math.floor(Math.random() * 200) + 100).toString(), 
+        "fname" : req.fname, 
+        "lname" : req.lname, 
+        "email" : req.email, 
+        "hash_pw" : ''
+    }
+    await MongoClient.connect(url, function(err, db){
+        if(err) throw err;
+        var dbo = db.db("test");
+            dbo.collection('customers').insertOne(userObjInfo, function(err, res2){
+                console.log("Customer " + userObjInfo.cust_ID + " added");
+               
+            });
+    });
+})
+
+// server code for user login
+app.post("/login", async function(req, res){
+    
+    const userObjInfo = { 
+        "email" : req.email, 
+        "hash_pw" : req.hash_pw
+    }
+    await MongoClient.connect(url, function(err, db){
+        if(err) throw err;
+        var dbo = db.db("test");
+            dbo.collection('customers').find({userObjInfo}).toArray(function(err, res2){
+                if(res2.email == req.email && res2.hash_pw == req.hash_pw){
+                    res.send(res2);
+                    res.redirect("/");
+                }
+               
+            });
+    });
+})
+
 app.listen(5000);
 console.log('Listening on port 5000');
 
