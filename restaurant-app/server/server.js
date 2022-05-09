@@ -3,7 +3,7 @@ const app = express();
 const {MongoClient} = require('mongodb');
 const cors = require('cors');
 
-var url = "mongodb://localhost:27017";
+var url = "mongodb+srv://tu617team:cosc617project@test.6rxfi.mongodb.net/test";
 app.use(cors());
 var x = [];
 
@@ -18,7 +18,6 @@ app.get("/", async function(req, res){
                 res.json(x);
             });
        }); 
-    
     
 });
 
@@ -103,7 +102,7 @@ app.post("/login", async function(req, res){
     });
 })
 
-app.listen(5000);
+app.listen(process.env.PORT || 5000);
 console.log('Listening on port 5000');
 
 
