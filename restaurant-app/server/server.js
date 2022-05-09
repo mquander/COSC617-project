@@ -1,7 +1,9 @@
+const path = require('path');
 const express = require('express');
 const app = express();
 const {MongoClient} = require('mongodb');
 const cors = require('cors');
+const routes = require('../src/index');
 
 var url = "mongodb+srv://tu617team:cosc617project@test.6rxfi.mongodb.net/test";
 app.use(cors());
@@ -103,6 +105,7 @@ app.post("/login", async function(req, res){
     });
 })
 
+app.use(routes);
 app.listen(process.env.PORT || 5000);
 console.log('Listening on port 5000');
 
