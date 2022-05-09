@@ -7,7 +7,7 @@ var url = "mongodb+srv://tu617team:cosc617project@test.6rxfi.mongodb.net/test";
 app.use(cors());
 var x = [];
 
-app.get("/menu", async function(req, res){
+app.get("/", async function(req, res){
     await MongoClient.connect(url, function(err, db){
             if(err) throw err;
             //create db
@@ -22,7 +22,7 @@ app.get("/menu", async function(req, res){
     
 });
 
-app.post("/checkout", async function(req, res){
+app.post("/", async function(req, res){
     var totalPrice;
     req.forEach(element => {
         totalPrice += parseFloat(element.price).toFixed(2);
