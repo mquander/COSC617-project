@@ -3,7 +3,7 @@ const app = express();
 const {MongoClient} = require('mongodb');
 const cors = require('cors');
 
-var url = "mongodb://localhost:27017";
+var url = "mongodb+srv://tu617team:cosc617project@test.6rxfi.mongodb.net/test";
 app.use(cors());
 var x = [];
 
