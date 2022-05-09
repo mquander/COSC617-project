@@ -6,6 +6,7 @@ const cors = require('cors');
 var url = "mongodb://localhost:27017";
 app.use(cors());
 var x = [];
+const PORT = process.env.PORT || 5000;
 
 app.get("/", async function(req, res){
     await MongoClient.connect(url, function(err, db){
@@ -103,8 +104,8 @@ app.post("/login", async function(req, res){
     });
 })
 
-app.listen(5000);
-console.log('Listening on port 5000');
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+
 
 
 
