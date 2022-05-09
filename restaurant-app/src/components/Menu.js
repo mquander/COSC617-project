@@ -3,16 +3,16 @@ import axios from 'axios';
 import './Menu.css';
 import CustomAppBar from "./CustomAppBar";
 import { Button } from "@mui/material";
+import baseUrl from "../baseUrl";
 // declare array variables to hold the menu data, and variable to calculate total order price
 var menu = [], appetizers = [], entrees = [], sides = [], deserts = [], beverages = [], order = [], totalPrice = 0;
 
 
 // GET request to the server port
-  axios.get('/').then(function(res) {
+  axios.get(baseUrl + '/').then(function(res) {
     menu = res.data;
   });
   
-
 
 // function to filter the menu item types
 function filterMenu(){
@@ -144,7 +144,7 @@ function Menu() {
               <div>{<ShoppingCart items={order} />}</div>
               <p style={{color:'red'}}>Total: ${totalPrice.toFixed(2)}</p>
             </div>
-            <Button href="/checkout" variant="contained" onClick={() => axios.post('http://localhost:5000', {order}).then(res => {console.log(res.data);})}>Checkout</Button>
+            <Button href="/checkout" variant="contained" onClick={() => axios.post(baseUrl, {order}).then(res => {console.log(res.data);})}>Checkout</Button>
         </div>
     </div>
     </>
